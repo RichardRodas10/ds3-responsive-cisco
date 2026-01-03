@@ -1,0 +1,346 @@
+<nav class="bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4 py-3">
+    <div class="flex items-center justify-between gap-4">
+      
+      <!-- MENÚ HAMBURGUESA -->
+      <div class="flex items-center gap-3 lg:hidden">
+        <button id="mobile-menu-btn" 
+                class="text-gray-700 hover:text-blue-600 transition-colors p-2 -ml-2"
+                aria-label="Menú">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+        
+        <a href="https://www.ds3comunicaciones.com/index.html" class="flex-shrink-0">
+          <img src="http://www.ds3comunicaciones.com/mikrotik/images/Logo1.jpg" 
+               alt="DS3 Comunicaciones" 
+               class="h-9 w-auto" />
+        </a>
+      </div>
+
+      <!-- LOGO (Desktop) -->
+      <a href="https://www.ds3comunicaciones.com/index.html" class="hidden lg:block flex-shrink-0">
+        <img src="http://www.ds3comunicaciones.com/mikrotik/images/Logo1.jpg" 
+             alt="DS3 Comunicaciones" 
+             class="h-12 w-auto" />
+      </a>
+
+      <!-- BUSCADOR (Desktop) -->
+      <div class="hidden lg:flex flex-1 max-w-lg">
+        <div class="relative w-full">
+          <input type="text" 
+                 id="search-input-desktop"
+                 placeholder="Buscar productos, marcas, modelos..." 
+                 class="w-full pl-4 pr-10 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+          />
+          <button class="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-blue-600 transition-colors p-1">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- INFORMACIÓN DE CONTACTO (Desktop) -->
+      <div class="hidden lg:flex items-center gap-6 text-xs">
+        <!-- Teléfonos Grupo 1 -->
+        <div class="flex items-center gap-2">
+          <i class="fas fa-phone text-blue-600 text-sm"></i>
+          <div class="flex flex-col gap-0.5">
+            <a href="tel:533-4339" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+              533-4339
+            </a>
+            <a href="tel:994428965" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+              994-428-965
+            </a>
+          </div>
+        </div>
+
+        <!-- Teléfonos Grupo 2 -->
+        <div class="flex items-center gap-2">
+          <i class="fas fa-phone text-blue-600 text-sm"></i>
+          <div class="flex flex-col gap-0.5">
+            <a href="tel:99653-3223" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+              99653-3223
+            </a>
+            <a href="tel:937514867" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+              937-514-867
+            </a>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <a href="mailto:netperu100@hotmail.com" class="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors">
+          <i class="fas fa-envelope text-blue-600 text-sm"></i>
+          <span class="font-medium">netperu100@hotmail.com</span>
+        </a>
+
+        <!-- Ubicación -->
+        <a href="https://maps.google.com/?q=DS3+Comunicaciones+Lima+Peru" 
+           target="_blank"
+           class="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors">
+          <i class="fas fa-map-marker-alt text-blue-600 text-sm"></i>
+          <span class="font-medium">Lima, PERÚ</span>
+        </a>
+      </div>
+
+      <!-- BUSCADOR (Mobile) -->
+      <div class="flex-1 max-w-[200px] lg:hidden ml-auto">
+        <div class="relative">
+          <input type="text" 
+                 id="search-input-mobile"
+                 placeholder="Buscar..." 
+                 class="w-full pl-3 pr-9 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          />
+          <button class="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-blue-600 transition-colors p-1">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+<!-- MENÚ LATERAL (Mobile) -->
+<div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-50 lg:hidden transition-opacity duration-300 opacity-0 pointer-events-none">
+  <div id="mobile-menu-sidebar" class="fixed left-0 top-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl transform -translate-x-full transition-transform duration-300 overflow-y-auto flex flex-col">
+    
+    <!-- Header del menú -->
+    <div class="sticky top-0 bg-white border-b border-gray-200 p-4 flex items-center justify-between z-10">
+      <img src="http://www.ds3comunicaciones.com/mikrotik/images/Logo1.jpg" 
+           alt="DS3 Comunicaciones" 
+           class="h-10" />
+      <button id="close-menu-btn" class="text-gray-700 hover:text-blue-600 transition-colors p-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Contenido del menú -->
+    <div class="p-4 flex-1 overflow-y-auto">
+      <!-- Lista Completa -->
+      <div class="mb-6">
+        <button class="w-full flex items-center justify-between py-3 text-left font-semibold text-gray-800 hover:text-blue-600 transition-colors menu-toggle"
+                data-target="lista-completa">
+          <span>Lista Completa</span>
+          <svg class="w-5 h-5 transform transition-transform menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="lista-completa-submenu" class="hidden pl-4 mt-2 space-y-2 submenu">
+          <a href="https://ds3comunicaciones.com/cisco/precios_cisco_access_point_b.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Access Point</a>
+          <a href="https://ds3comunicaciones.com/cisco/precios_cisco_switch_small_bussines_b.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Switch Small Business</a>
+          <a href="https://ds3comunicaciones.com/cisco/precios_cisco_switch_catalyst_b.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Switch Catalyst</a>
+          <a href="https://ds3comunicaciones.com/cisco/precios_cisco_meraki_b.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Cisco Meraki</a>
+          <a href="https://ds3comunicaciones.com/cisco/precios_cisco_nexus_b.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Cisco Nexus</a>
+          <a href="https://ds3comunicaciones.com/cisco/precios_cisco_router_b.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Routers</a>
+          <a href="https://ds3comunicaciones.com/cisco/precios_cisco_telefonos_b.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Teléfonos Cisco</a>
+          <a href="https://ds3comunicaciones.com/cisco/precios_cisco_modulo_transceiver_fibra_b.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Módulo / Transceiver de Fibra</a>
+          <a href="https://ds3comunicaciones.com/cisco/precios_cisco_accesorios_b.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Accesorios</a>
+          <a href="https://ds3comunicaciones.com/cisco/precios_cisco_switch_industrial_b.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Switch Industrial</a>
+        </div>
+      </div>
+
+      <!-- Lista de Precios -->
+      <div class="mb-6">
+        <button class="w-full flex items-center justify-between py-3 text-left font-semibold text-gray-800 hover:text-blue-600 transition-colors menu-toggle"
+                data-target="lista-precios">
+          <span>Lista de Precios</span>
+          <svg class="w-5 h-5 transform transition-transform menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="lista-precios-submenu" class="hidden pl-4 mt-2 space-y-2 submenu">
+          <a href="https://www.ds3comunicaciones.com/AMP/precios_amp.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">AMP</a>
+          <a href="https://www.ds3comunicaciones.com/amphenol/precios_amphenol.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Amphenol</a>
+          <a href="https://www.ds3comunicaciones.com/andrew/precios_andrew.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Andrew</a>
+          <a href="https://www.ds3comunicaciones.com/apc/precios_apc.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">APC</a>
+          <a href="https://www.ds3comunicaciones.com/cisco/precios_cisco.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">CISCO</a>
+          <a href="https://www.ds3comunicaciones.com/dlink/precios_dlink.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">D-Link</a>
+          <a href="https://www.ds3comunicaciones.com/dixon/precios_dixon.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Dixon</a>
+          <a href="https://www.ds3comunicaciones.com/Energit/precios_energit.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Energit</a>
+          <a href="https://www.ds3comunicaciones.com/FibreFab/precios_fibrefab.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Fibra</a>
+          <a href="https://www.ds3comunicaciones.com/hp/precios_hp.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">HP</a>
+          <a href="https://www.ds3comunicaciones.com/mikrotik/precios_mikrotik.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Mikrotik</a>
+          <a href="https://www.ds3comunicaciones.com/nexxt_solutions/precios_nexxt_solutions.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Nexxt Solutions</a>
+          <a href="https://www.ds3comunicaciones.com/panduit/precios_panduit.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Panduit</a>
+          <a href="https://www.ds3comunicaciones.com/siemon/precios_siemon.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Siemon</a>
+          <a href="https://www.ds3comunicaciones.com/Teldor/precios_teldor.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Teldor</a>
+          <a href="https://www.ds3comunicaciones.com/trendnet/precios_trendnet.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">TRENDnet</a>
+          <a href="https://www.ds3comunicaciones.com/ubiquiti/precios_ubiquiti.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Ubiquiti</a>
+        </div>
+      </div>
+
+      <!-- Marcas -->
+      <div class="mb-6">
+        <button class="w-full flex items-center justify-between py-3 text-left font-semibold text-gray-800 hover:text-blue-600 transition-colors menu-toggle"
+                data-target="marcas">
+          <span>Marcas</span>
+          <svg class="w-5 h-5 transform transition-transform menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="marcas-submenu" class="hidden pl-4 mt-2 grid grid-cols-2 gap-3 submenu">
+          <!-- Alfa -->
+          <a href="https://www.ds3comunicaciones.com/alfa/index.html" class="flex items-center justify-center p-2 border border-gray-200 rounded hover:border-blue-500 transition-colors">
+            <img src="http://www.ds3comunicaciones.com/belden/images/ALFA_logo1.gif" alt="Alfa" class="max-h-6 w-auto" />
+          </a>
+          <!-- Airlive -->
+          <a href="https://www.ds3comunicaciones.com/airlive/index.html" class="flex items-center justify-center p-2 border border-gray-200 rounded hover:border-blue-500 transition-colors">
+            <img src="http://www.ds3comunicaciones.com/belden/images/airlivelogo.gif" alt="Airlive" class="max-h-6 w-auto" />
+          </a>
+          <!-- Andrew -->
+          <a href="https://www.ds3comunicaciones.com/andrew/index.html" class="flex items-center justify-center p-2 border border-gray-200 rounded hover:border-blue-500 transition-colors">
+            <img src="http://www.ds3comunicaciones.com/andrew/images/logo_andrew.jpg" alt="Andrew" class="max-h-6 w-auto" />
+          </a>
+          <!-- AMP -->
+          <a href="https://www.ds3comunicaciones.com/AMP/index.html" class="flex items-center justify-center p-2 border border-gray-200 rounded hover:border-blue-500 transition-colors">
+            <img src="http://www.ds3comunicaciones.com/belden/images/amp_logo2-91x20.jpg" alt="AMP" class="max-h-6 w-auto" />
+          </a>
+          <!-- Amphenol -->
+          <a href="https://www.ds3comunicaciones.com/amphenol/index.html" class="flex items-center justify-center p-2 border border-gray-200 rounded hover:border-blue-500 transition-colors">
+            <img src="http://www.ds3comunicaciones.com/belden/images/amphenol_logo-100x21.jpg" alt="Amphenol" class="max-h-6 w-auto" />
+          </a>
+          <!-- Belden -->
+          <a href="https://www.ds3comunicaciones.com/belden/index.html" class="flex items-center justify-center p-2 border border-gray-200 rounded hover:border-blue-500 transition-colors">
+            <img src="http://www.ds3comunicaciones.com/belden/images/Belden-Logo-93x15.jpg" alt="Belden" class="max-h-6 w-auto" />
+          </a>
+          <!-- Cisco -->
+          <a href="https://www.ds3comunicaciones.com/cisco/index.html" class="flex items-center justify-center p-2 border border-gray-200 rounded hover:border-blue-500 transition-colors">
+            <img src="http://www.ds3comunicaciones.com/cisco/images/logo-cisco.gif" alt="Cisco" class="max-h-6 w-auto" />
+          </a>
+          <!-- Dahua -->
+          <a href="https://www.ds3comunicaciones.com/dahua/index.html" class="flex items-center justify-center p-2 border border-gray-200 rounded hover:border-blue-500 transition-colors">
+            <img src="http://www.ds3comunicaciones.com/dahua/images/dahua_logo.jpg" alt="Dahua" class="max-h-6 w-auto" />
+          </a>
+          <!-- D-Link -->
+          <a href="https://www.ds3comunicaciones.com/dlink/index.html" class="flex items-center justify-center p-2 border border-gray-200 rounded hover:border-blue-500 transition-colors">
+            <img src="http://www.ds3comunicaciones.com/belden/images/D-Link_Logo-100x26.jpg" alt="D-Link" class="max-h-6 w-auto" />
+          </a>
+          <!-- Dixon -->
+          <a href="https://www.ds3comunicaciones.com/dixon/index.html" class="flex items-center justify-center p-2 border border-gray-200 rounded hover:border-blue-500 transition-colors">
+            <img src="http://www.ds3comunicaciones.com/belden/images/dixon_logo-100x19.jpg" alt="Dixon" class="max-h-6 w-auto" />
+          </a>
+          <!-- FibreFab -->
+          <a href="https://www.ds3comunicaciones.com/FibreFab/index.html" class="flex items-center justify-center p-2 border border-gray-200 rounded hover:border-blue-500 transition-colors">
+            <img src="http://www.ds3comunicaciones.com/FibreFab/images/logo_fibrefab.png" alt="FibreFab" class="max-h-6 w-auto" />
+          </a>
+          <!-- LanPro -->
+          <a href="https://www.ds3comunicaciones.com/lanpro/index.html" class="flex items-center justify-center p-2 border border-gray-200 rounded hover:border-blue-500 transition-colors">
+            <img src="http://www.ds3comunicaciones.com/lanpro/images/lanpro_logo.jpg" alt="LanPro" class="max-h-6 w-auto" />
+          </a>
+          <!-- L-Com -->
+          <a href="https://www.ds3comunicaciones.com/l-com/" class="flex items-center justify-center p-2 border border-gray-200 rounded hover:border-blue-500 transition-colors">
+            <img src="http://www.ds3comunicaciones.com/sitebuilder/images/lcom_logo-100x23.jpg" alt="L-Com" class="max-h-6 w-auto" />
+          </a>
+          <!-- Mikrotik -->
+          <a href="https://www.ds3comunicaciones.com/mikrotik/index.html" class="flex items-center justify-center p-2 border border-gray-200 rounded hover:border-blue-500 transition-colors">
+            <img src="http://www.ds3comunicaciones.com/belden/images/mikrotik_logo-100x24.png" alt="Mikrotik" class="max-h-6 w-auto" />
+          </a>
+          <!-- Panduit -->
+          <a href="https://www.ds3comunicaciones.com/panduit/index.html" class="flex items-center justify-center p-2 border border-gray-200 rounded hover:border-blue-500 transition-colors">
+            <img src="http://www.ds3comunicaciones.com/panduit/images/panduit_logo.jpg" alt="Panduit" class="max-h-6 w-auto" />
+          </a>
+          <!-- Satra -->
+          <a href="https://www.ds3comunicaciones.com/satra/index.html" class="flex items-center justify-center p-2 border border-gray-200 rounded hover:border-blue-500 transition-colors">
+            <img src="http://www.ds3comunicaciones.com/satra/images/satra.JPG" alt="Satra" class="max-h-6 w-auto" />
+          </a>
+          <!-- Siemon -->
+          <a href="https://www.ds3comunicaciones.com/siemon/index.html" class="flex items-center justify-center p-2 border border-gray-200 rounded hover:border-blue-500 transition-colors">
+            <img src="http://www.ds3comunicaciones.com/siemon/images/siemon_logo1.GIF" alt="Siemon" class="max-h-6 w-auto" />
+          </a>
+          <!-- TP-Link -->
+          <a href="https://www.ds3comunicaciones.com/tplink/" class="flex items-center justify-center p-2 border border-gray-200 rounded hover:border-blue-500 transition-colors">
+            <img src="http://www.ds3comunicaciones.com/belden/images/tp-link_logo-100x13.jpg" alt="TP-Link" class="max-h-6 w-auto" />
+          </a>
+          <!-- TRENDnet -->
+          <a href="https://www.ds3comunicaciones.com/trendnet/" class="flex items-center justify-center p-2 border border-gray-200 rounded hover:border-blue-500 transition-colors">
+            <img src="http://www.ds3comunicaciones.com/belden/images/trendnet_logo-100x20.jpg" alt="TRENDnet" class="max-h-6 w-auto" />
+          </a>
+          <!-- Ubiquiti -->
+          <a href="https://www.ds3comunicaciones.com/ubiquiti/index.html" class="flex items-center justify-center p-2 border border-gray-200 rounded hover:border-blue-500 transition-colors">
+            <img src="http://www.ds3comunicaciones.com/belden/images/ubnt_logo-100x47.png" alt="Ubiquiti" class="max-h-6 w-auto" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Enlaces rápidos -->
+      <div class="mb-6">
+        <button class="w-full flex items-center justify-between py-3 text-left font-semibold text-gray-800 hover:text-blue-600 transition-colors menu-toggle"
+                data-target="enlaces-rapidos">
+          <span>Enlaces rápidos</span>
+          <svg class="w-5 h-5 transform transition-transform menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="enlaces-rapidos-submenu" class="hidden pl-4 mt-2 space-y-2 submenu">
+          <a href="https://www.ds3comunicaciones.com/soporte.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Soporte Técnico</a>
+          <a href="https://ds3comunicaciones.com/us.html" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Acerca de Nosotros</a>
+        </div>
+      </div>
+
+      <!-- Contacto -->
+      <div class="mb-6">
+        <button class="w-full flex items-center justify-between py-3 text-left font-semibold text-gray-800 hover:text-blue-600 transition-colors menu-toggle"
+                data-target="contacto-info">
+          <span>Contacto</span>
+          <svg class="w-5 h-5 transform transition-transform menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+
+        <div id="contacto-info-submenu" class="hidden pl-4 mt-3 space-y-4 submenu">
+          <div class="space-y-3">
+            <!-- Grupo de teléfono 2 -->
+            <div class="flex items-center gap-3 text-sm">
+              <i class="fas fa-phone text-blue-600 w-4 text-center"></i>
+              <div class="flex items-center gap-2">
+                <a href="tel:533-4339" class="text-gray-600 hover:text-blue-600 transition-colors font-medium">
+                  533-4339
+                </a>
+                <span class="text-gray-300">|</span>
+                <a href="tel:994428965" class="text-gray-600 hover:text-blue-600 transition-colors font-medium">
+                  994-428-965
+                </a>
+              </div>
+            </div>
+            
+            <!-- Grupo de teléfono 2 -->
+            <div class="flex items-center gap-3 text-sm">
+              <i class="fas fa-phone text-blue-600 w-4 text-center"></i>
+              <div class="flex items-center gap-2">
+                <a href="tel:99653-3223" class="text-gray-600 hover:text-blue-600 transition-colors font-medium">
+                  99653-3223
+                </a>
+                <span class="text-gray-300">|</span>
+                <a href="tel:937514867" class="text-gray-600 hover:text-blue-600 transition-colors font-medium">
+                  937-514-867
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <a href="mailto:netperu100@hotmail.com" class="flex items-center gap-3 py-1 text-gray-600 hover:text-blue-600 transition-colors text-sm">
+            <i class="fas fa-envelope text-blue-600 w-4 text-center"></i>
+            <span class="font-medium">netperu100@hotmail.com</span>
+          </a>
+
+          <!-- Local -->
+          <a href="https://maps.google.com/?q=DS3+Comunicaciones+Lima+Peru" 
+             target="_blank"
+             class="flex items-center gap-3 py-1 text-gray-600 hover:text-blue-600 transition-colors text-sm">
+            <i class="fas fa-map-marker-alt text-blue-600 w-4 text-center"></i>
+            <span class="font-medium">Lima, PERÚ</span>
+          </a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
